@@ -33,7 +33,7 @@ class UjianDokumenController extends Controller
         $request->validate([
             'berkas_bap' => 'required|file|mimes:pdf|max:5120',
             'berkas_nilai' => 'nullable|file|mimes:pdf|max:5120',
-            'nilai' => 'nullable',
+            'nilai' => 'nullable|string|max:20',
             'keterangan' => 'nullable|string|max:500',
         ]);
 

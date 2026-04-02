@@ -15,7 +15,6 @@ class UjianDokumen extends Model
     ];
 
     protected $casts = [
-        'nilai' => 'decimal:2',
         'uploaded_at' => 'datetime',
     ];
 
