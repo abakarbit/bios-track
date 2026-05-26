@@ -194,8 +194,9 @@
             <div class="sidebar-brand d-flex align-items-center gap-2">
                 <i class="bi bi-mortarboard-fill fs-4" style="color:#f0c040"></i>
                 <div>
-                    <div>BIOS Track</div>
-                    <small style="font-size:11px; opacity:0.7">Biosistem Tracking Tugas Akhir</small>
+                    <div>Institut Teknologi Sumatera<br>
+                    BIOS Track</div>
+                    <small style="font-size:11px; opacity:0.7">Biosistem Tracking Tugas Akhir <br>Program studi Teknik Biosistem</small>
                 </div>
             </div>
             <div class="p-3">
@@ -212,6 +213,9 @@
                 </div>
             </div>
             <ul class="nav flex-column flex-grow-1 pb-3">
+                <li class="mb-2">
+                    <a href="{{ route('profile') }}" class="nav-link"><i class="bi bi-person-fill"></i> Profil</a>
+                </li>
                 @if (Auth::user()->role === 'mahasiswa')
                     <li class="nav-item">
                         <a href="{{ route('mahasiswa.dashboard') }}" class="nav-link @active(['mahasiswa/dashboard'])"><i
@@ -224,7 +228,7 @@
                     </li>
                     <li class="nav-item">
                         <a href="{{ route('mahasiswa.bimbingan.index') }}" class="nav-link @active(['mahasiswa/bimbingan'])"><i
-                                class="bi bi-journal-bookmark-fill"></i> Dosen Pembimbing</a>
+                                class="bi bi-journal-bookmark-fill"></i> Jadwal Bimbingan</a>
                     </li>
                     <li class="nav-item">
                         <a href="{{ route('mahasiswa.bimbingan.riwayat') }}" class="nav-link @active(['mahasiswa/bimbingan/riwayat/all'])"><i
@@ -322,7 +326,7 @@
                         <span class="badge bg-danger notification-count" id="notif-count"
                             style="display:none;font-size:10px;"></span>
                     </a>
-                    <a href="{{ route('profile') }}" class="nav-link"><i class="bi bi-person-fill"></i> Profil</a>
+
                     <form action="{{ route('logout') }}" method="POST" class="d-inline w-100">
                         @csrf
                         <button type="submit" class="nav-link btn btn-link text-start w-100"

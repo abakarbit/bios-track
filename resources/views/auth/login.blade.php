@@ -43,7 +43,7 @@
         max-width: 1200px;
         margin: 0 auto;
         padding: 0 1.5rem;
-        height: 58px;
+        height: 70px;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -55,14 +55,15 @@
         text-decoration: none;
     }
     .topbar-logo {
-        width: 34px; height: 34px;
-        background: linear-gradient(135deg, var(--primary), var(--secondary));
-        border-radius: 8px;
-        display: grid;
-        place-items: center;
-        color: #fff;
-        font-size: 0.95rem;
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
         flex-shrink: 0;
+    }
+    .topbar-logo img {
+        height: 32px;
+        width: auto;
+        object-fit: contain;
     }
     .topbar-name {
         font-weight: 700;
@@ -764,8 +765,13 @@
 <nav class="topbar" id="topbar">
     <div class="topbar-inner">
         <a href="/" class="topbar-brand">
-            <div class="topbar-logo"><i class="bi bi-mortarboard-fill"></i></div>
+            <div class="topbar-logo">
+                <img src="{{ asset('storage/images/ITERA.png') }}" alt="ITERA">
+                <img src="{{ asset('storage/images/TBS.png') }}" alt="TBS">
+            </div>
             <div class="topbar-name">
+                Institut Teknologi Sumatera <br>
+                Program studi Teknik Biosistem <br>
                 BIOS Track
                 <small>Biosistem Tracking Tugas Akhir</small>
             </div>

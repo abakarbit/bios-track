@@ -144,7 +144,7 @@
                             @forelse($progressRecords as $p)
                                 <tr>
                                     <td class="px-4 text-muted small">{{ $loop->iteration }}</td>
-                                    <td><small>{{ $p->tanggal_bimbingan->format('d M Y H:i') }}</small></td>
+                                    <td><small>{{ $p->tanggal_bimbingan ? $p->tanggal_bimbingan->format('d M Y H:i') : '-' }}</small></td>
                                     <td><small>{{ Str::limit($p->catatan, 50) }}</small></td>
                                     <td><small>{{ $p->bimbingan->dosen->name ?? '-' }}</small></td>
                                     <td>
@@ -201,9 +201,9 @@
                 <div class="card-header"><i class="bi bi-lightning-charge me-2 text-warning"></i>Aksi Cepat</div>
                 <div class="card-body d-grid gap-2">
                     <a href="{{ route('mahasiswa.bimbingan.create') }}" class="btn btn-outline-primary"><i
-                            class="bi bi-plus-circle me-2"></i>Tentukan Dosen Pembimbing</a>
+                            class="bi bi-plus-circle me-2"></i>Dosen Pembimbing</a>
                     <a href="{{ route('mahasiswa.ujian.create') }}" class="btn btn-outline-success"><i
-                            class="bi bi-plus-circle me-2"></i>Buat Jadwal Ujian</a>
+                            class="bi bi-plus-circle me-2"></i>Jadwal Ujian</a>
                     <a href="{{ route('mahasiswa.bimbingan.riwayat') }}" class="btn btn-outline-secondary"><i
                             class="bi bi-clock-history me-2"></i>Riwayat Bimbingan</a>
                 </div>

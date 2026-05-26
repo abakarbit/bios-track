@@ -16,11 +16,10 @@
             <div class="card-body p-4">
                 <form action="{{ route('mahasiswa.bimbingan.store') }}" method="POST">
                     @csrf
-                    <div class="mb-3">
+                    <div class="mb-3" style="display: none">
                         <label class="form-label fw-semibold">Jenis Bimbingan <span class="text-danger">*</span></label>
                         <select name="jenis_bimbingan" class="form-select @error('jenis_bimbingan') is-invalid @enderror" required>
-                            <option value="">-- Pilih Jenis Bimbingan --</option>
-                            @foreach($availableJenis as $jenis)
+                           @foreach($availableJenis as $jenis)
                             <option value="{{ $jenis }}" {{ old('jenis_bimbingan')==$jenis?'selected':'' }}>
                                 {{ \App\Models\Bimbingan::JENIS[$jenis] }}
                             </option>
@@ -60,10 +59,12 @@
                         @error('pembimbing')<div class="text-danger small">{{ $message }}</div>@enderror
                     </div>
 
-                    <div class="mb-4">
-                        <label class="form-label fw-semibold">Catatan / Agenda Bimbingan</label>
+
+                    <div class="mb-4"  @if(in_array('proposal', $availableJenis)) style="display:none" @endif>
+                        <label class="form-label fw-semibold">Catatan</label>
                         <textarea name="catatan_mahasiswa" class="form-control" rows="3" placeholder="Tuliskan agenda atau catatan untuk bimbingan ini..." maxlength="500">{{ old('catatan_mahasiswa') }}</textarea>
                     </div>
+
                     <div class="d-flex gap-2">
                         <button type="submit" class="btn btn-primary"><i class="bi bi-send me-2"></i>Ajukan Jadwal</button>
                         <a href="{{ route('mahasiswa.bimbingan.index') }}" class="btn btn-outline-secondary">Batal</a>
