@@ -24,6 +24,7 @@
 - [Built With](#-built-with)
 - [System Architecture](#-system-architecture)
 - [Database Schema](#-database-schema)
+- [Screenshots](#-screenshots)
 - [Features](#-features)
 - [Roles & Access Control](#-roles--access-control)
 - [Getting Started](#-getting-started)
@@ -282,6 +283,20 @@ users ──< notifications (sender_id = pengirim)
 | `read_at` | `timestamp NULL` | |
 
 ---
+
+## Screenshots
+
+| Halaman | Preview |
+|---------|---------|
+| Portal Publik & Login | ![Portal Login](docs/screenshots/portal-login.png) |
+| Dashboard Mahasiswa | ![Dashboard Mahasiswa](docs/screenshots/dashboard-mahasiswa.png) |
+| Manajemen Bimbingan | ![Bimbingan](docs/screenshots/bimbingan.png) |
+| Manajemen Ujian | ![Ujian](docs/screenshots/ujian.png) |
+| Dashboard Dosen | ![Dashboard Dosen](docs/screenshots/dashboard-dosen.png) |
+| Dashboard Kaprodi | ![Dashboard Kaprodi](docs/screenshots/dashboard-kaprodi.png) |
+| Dashboard Admin | ![Dashboard Admin](docs/screenshots/dashboard-admin.png) |
+
+
 
 ## Features
 
